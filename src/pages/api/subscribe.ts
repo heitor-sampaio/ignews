@@ -60,8 +60,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       }],
       mode: 'subscription',
       allow_promotion_codes: true,
-      success_url: `${process.env.NEXTAUTH_URL}/posts`,
-      cancel_url: process.env.NEXTAUTH_URL
+      success_url: `${process.env.NEXT_PUBLIC_API_URL}/posts`,
+      cancel_url: process.env.NEXT_PUBLIC_API_URL
     })
 
     return res.status(200).json({ sessionId: stripeCheckoutSession.id})
